@@ -1,0 +1,52 @@
+import "std.fool"
+
+class Person {
+    var height: Integer
+    var weight: Integer
+    new(height: Integer, weight: Integer) {
+        this.height = height
+        this.weight = weight
+    }
+}
+
+class Student: Person {
+    var grade: Integer
+    new(height: Integer, weight: Integer, grade: Integer) {
+        super(height, weight)
+        write(height)
+        this.grade = grade
+    }
+    
+    def abs_sum(lhs: Integer, rhs: Integer, f: (Integer, Integer) -> Integer): Integer {
+        return f(lhs, rhs)
+    }
+
+    def compare(student: Student): Bool {
+        if (student.grade > this.grade) {
+            false
+        }
+        else {
+            true
+        }
+        while (i < 4) {
+            write("ok")
+        }
+        when (i) {
+            is Integer -> 4
+            2 -> 44
+
+            else -> 55
+        }
+    }
+    def main() {
+        abs_sum(2, 3, {(val1: Integer, val2: Integer) -> 
+                    if(val1 + val2 < 0) {
+                        -(val1 + val2)
+                    }
+                    else {
+                        val1 + val2
+                    }
+        })
+    }
+
+}
